@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #container {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    #text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 48px;
+      animation: move 3s infinite;
+    }
+
+    @keyframes move {
+      0% {
+        top: 50%;
+        left: 50%;
+      }
+      25% {
+        top: 25%;
+        left: 75%;
+      }
+      50% {
+        top: 75%;
+        left: 25%;
+      }
+      75% {
+        top: 25%;
+        left: 25%;
+      }
+      100% {
+        top: 50%;
+        left: 50%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div id="text">Kathlyn</div>
+  </div>
+
+  <script>
+    function changeColor() {
+      var letters = "0123456789ABCDEF";
+      var color = "#";
+      for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      document.getElementById("text").style.color = color;
+    }
+
+    setInterval(changeColor, 500); // Change color every 0.5 seconds
+  </script>
+</body>
+</html>
